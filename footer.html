@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oil Spill Detection</title>
+    <!-- Fonts Links For Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* Importing Google font - Open Sans */
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'Open Sans', sans-serif;
+        }
+
+        html, body {
+          height: 100%;
+        }
+
+        body {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .main-content {
+          flex: 1;
+        }
+
+        .footer-wrapper {
+          background-color: #171717;
+          color: #fff;
+          padding: 60px;
+        }
+
+        .footer-layout {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          gap: 3.5rem;
+        }
+
+        .footer-section h4 {
+          color: white;
+          font-size: 1.2rem;
+          font-weight: 400;
+          text-align: center;
+        }
+
+        .footer-section .link-list {
+          margin-top: 20px;
+          text-align: center;
+        }
+
+        .footer-section .link-list li {
+          list-style: none;
+          margin-bottom: 10px;
+        }
+
+        .footer-section .link-list li a {
+          text-decoration: none;
+          color: white;
+          transition: color 0.3s ease;
+        }
+
+        .footer-section .link-list li a:hover {
+          color: #bbb;
+          animation: shake 0.3s ease-in-out;
+        }
+
+        .footer-section p {
+          margin: 20px 0;
+          padding-top: 20px;
+          color: #bbb;
+          text-align: center;
+          max-width: 300px;
+          margin: auto;
+        }
+
+        .footer-section form {
+          display: flex;
+          gap: 5px;
+          justify-content: center;
+          align-items: center;
+          margin-top: 20px;
+          position: relative;
+        }
+
+        .footer-section .email-input {
+          height: 40px;
+          border-radius: 6px;
+          background: none;
+          outline: none;
+          border: 1px solid #7489C6;
+          caret-color: #fff;
+          color: #fff;
+          padding-left: 10px;
+          width: 200px;
+        }
+
+        .footer-section .email-input::placeholder {
+          color: #ccc;
+        }
+
+        .footer-section form button {
+          background: black;
+          color:#fff;
+          outline: none;
+          border: none;
+          padding: 10px 15px;
+          border-radius: 6px;
+          cursor: pointer;
+          font-weight: 500;
+          transition: 0.2s ease;
+        }
+
+        .footer-section form button:hover {
+          background: #555;
+        }
+
+        .footer-section .social-links {
+          display: flex;
+          justify-content: center;
+          margin-top: 30px;
+          gap: 30px;
+          cursor: pointer;
+        }
+
+        .footer-section .social-links i {
+          color: white;
+          transition: color 0.3s ease;
+        }
+
+        .footer-section .social-links i:hover  {
+          color: #bbb;
+        }
+
+        @media (max-width: 768px) {
+          .footer-wrapper {
+            padding: 20px;
+            text-align: center;
+          }
+
+          .footer-layout {
+            flex-direction: column;
+            gap: 1rem;
+          }
+
+          .footer-section form {
+            display: block;
+          }
+
+          .footer-section form :where(input, button) {
+            width: 100%;
+          }
+
+          .footer-section form button {
+            margin: 10px 0 0 0;
+          }
+        }
+
+        /* Shake animation */
+        @keyframes shake {
+          0% { transform: translateX(0); }
+          25% { transform: translateX(-5px); }
+          50% { transform: translateX(5px); }
+          75% { transform: translateX(-5px); }
+          100% { transform: translateX(0); }
+        }
+
+        /* Success message */
+        .success-message {
+          position: absolute;
+          bottom: -30px;
+          left: 50%;
+          transform: translateX(-50%);
+          background-color: rgba(0, 128, 0, 0.8);
+          color: white;
+          padding: 5px 10px;
+          border-radius: 4px;
+          font-size: 14px;
+          display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Footer -->
+    <footer class="footer-wrapper">
+        <div class="footer-layout">
+            <div class="footer-section">
+                <h4>About Oil Spill Detection</h4>
+                <p>Oil Spill Detection is a vital technology that helps in identifying and mitigating the effects of oil spills in marine and coastal environments. Stay informed about our innovative solutions and efforts to protect our oceans.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="link-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="technology.html">Technology</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul class="link-list">
+                    <li><a href="termsService.html">Terms of Service</a></li>
+                    <li><a href="privacyPolicy.html">Privacy Policy</a></li>
+                    <li><a href="cookiePolicy.html">Cookie Policy</a></li>
+                    <li><a href="dmcaPolicy.html">DMCA Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Newsletter</h4>
+                <p>Subscribe to our newsletter to receive updates on the latest technologies and news related to Oil Spill Detection.</p>
+                <form id="newsletterForm" action="#">
+                    <input id="emailInput" type="email" class="email-input" placeholder="Your email" required>
+                    <button type="submit">SUBSCRIBE</button>
+                    <div id="successMessage" class="success-message">Subscribed successfully!</div>
+                </form>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/login/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const newsletterForm = document.getElementById('newsletterForm');
+        const emailInput = document.getElementById('emailInput');
+        const successMessage = document.getElementById('successMessage');
+
+        newsletterForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Simulating form submission
+            // Replace with actual backend integration to process email subscription
+            if (emailInput.value.trim() !== '') {
+                successMessage.style.display = 'block';
+                setTimeout(function() {
+                    successMessage.style.display = 'none';
+                    newsletterForm.reset(); // Reset form after successful submission
+                }, 3000); // Hide message after 3 seconds
+            }
+        });
+    </script>
+
+</body>
+</html>
